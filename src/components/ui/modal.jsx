@@ -1,3 +1,6 @@
+import { X } from "lucide-react";
+import { Button } from "./button.jsx";
+import { Card, CardContent, CardHeader, CardTitle } from "./card.jsx";
 import { Input } from "./input.jsx";
 
 // Custom Modal component for creating and editing divisions
@@ -23,7 +26,11 @@ const DivisionModal = ({
             <X className="h-4 w-4" />
           </Button>
         </CardHeader>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          console.log("Form submitted with data:", formData);
+          onSubmit(e);
+        }}>
           <CardContent className="space-y-4">
             <div>
               <label className="text-sm font-medium mb-2 block">
@@ -143,3 +150,4 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, message }) => {
 };
 
 export { ConfirmModal, DivisionModal };
+

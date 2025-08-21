@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5001/api/v1/division-management";
+const API_BASE_URL = "https://division-management-api.onrender.com/api/v1/division-management";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
